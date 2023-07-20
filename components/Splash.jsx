@@ -5,7 +5,7 @@ export default function Splash({screen, toggleScreen}) {
         <section className="splash">
             <h1>Quizzical</h1>
             <div>Some description if needed</div>
-            <button>Start quiz</button>
+            <button onClick={() => toggleScreen("quiz")}>Start quiz</button>
         </section>
     )
 }

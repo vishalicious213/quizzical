@@ -46,4 +46,5 @@
 .splash button:hover {
     color: white;
     background-color: var(--lightblue);
+    cursor: pointer;
 }

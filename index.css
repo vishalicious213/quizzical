@@ -1,5 +1,6 @@
 :root {
     --blue: #293264;
+    --lightblue: #29389b;
     --offwhite: #F5F7FB;
 }
 
@@ -32,4 +33,15 @@
 
 .splash button {
     width: 12rem;
+    height: 3.25rem;
+    border-radius: 1rem;
+    color: var(--offwhite);
+    background-color: var(--blue);
+    border: none;
+    outline: none;
+}
+
+.splash button:hover {
+    color: white;
+    background-color: var(--lightblue);
 }

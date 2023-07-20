@@ -7,8 +7,14 @@ export default function Splash({screen, toggleScreen}) {
         type: ""
     })
 
-    function handleChange() {
-        console.log("selected")
+    function handleChange(event) {
+        const {name, value} = event.target
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [name]: value
+            }
+        })
     }
 
     return (

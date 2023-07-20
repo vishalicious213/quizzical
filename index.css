@@ -1,10 +1,15 @@
+:root {
+    --blue: #293264;
+    --offwhite: #F5F7FB;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    color: #293264;
-    background-color: #F5F7FB;
+    color: var(--blue);
+    background-color: var(--offwhite);
 }
 
 /* SPLASH */
@@ -23,4 +28,8 @@
 
 .splash-desc {
     margin: .5rem 0 2rem;
+}
+
+.splash button {
+    width: 12rem;
 }

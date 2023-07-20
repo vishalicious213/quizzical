@@ -7,8 +7,7 @@ export default function App() {
 
     return (
         <main>
-            <Splash screen={screen} />
-            <Quiz screen={screen} />
+            {screen === "splash" ? <Splash screen={screen} /> : <Quiz screen={screen} />}
         </main>
     )
 }

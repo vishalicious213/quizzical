@@ -29,6 +29,8 @@
 
 .splash-desc {
     margin: .5rem 0 2rem;
+    max-width: 16rem;
+    text-align: center;
 }
 
 .splash button {

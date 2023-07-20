@@ -7,7 +7,11 @@ export default function App() {
 
     return (
         <main>
-            {screen === "splash" ? <Splash screen={screen} /> : <Quiz screen={screen} />}
+            {
+                screen === "splash" 
+                ? <Splash screen={screen} toggleScreen={setScreen} /> 
+                : <Quiz screen={screen} toggleScreen={setScreen} />
+            }
         </main>
     )
 }

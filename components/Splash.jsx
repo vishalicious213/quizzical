@@ -35,12 +35,12 @@ export default function Splash({toggleScreen, updateQuestions}) {
         let urlParams = getParams()
         let apiResponse = {}
 
-        console.log(urlParams)
+        // console.log(urlParams)
         await fetch(`https://opentdb.com/api.php${urlParams}`)
             .then(response => response.json())
             .then(data => apiResponse = data)
 
-        console.log(apiResponse)
+        // console.log(apiResponse)
         if (apiResponse.response_code === 1) {
             warning()
         } else {

@@ -9,7 +9,6 @@ export default function Quiz({toggleScreen, questions}) {
                         ...question.incorrect_answers,
                         question.correct_answer
                     ]
-                    console.log(answersArr)
 
                     return (
                         <div key={index} className="question">

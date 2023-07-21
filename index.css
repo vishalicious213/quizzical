@@ -33,23 +33,6 @@
     text-align: center;
 }
 
-.splash button {
-    width: 12rem;
-    height: 3.25rem;
-    border-radius: 1rem;
-    color: var(--offwhite);
-    background-color: var(--blue);
-    border: none;
-    outline: none;
-    margin-top: 2rem;
-}
-
-.splash button:hover {
-    color: white;
-    background-color: var(--lightblue);
-    cursor: pointer;
-}
-
 /* SETUP-FORM */
 
 .setup-form {
@@ -85,5 +68,23 @@ select {
 }
 
 label {
+    cursor: pointer;
+}
+
+.start-btn {
+    display: block;
+    width: 12rem;
+    height: 3.25rem;
+    border-radius: 1rem;
+    color: var(--offwhite);
+    background-color: var(--blue);
+    border: none;
+    outline: none;
+    margin: 2rem auto 0;
+}
+
+.start-btn:hover {
+    color: white;
+    background-color: var(--lightblue);
     cursor: pointer;
 }

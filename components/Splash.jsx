@@ -131,8 +131,9 @@ export default function Splash({screen, toggleScreen}) {
                         <label htmlFor="tf">True / False</label>
                     </div>
                 </fieldset>
+
+                <button className="start-btn" onClick={() => toggleScreen("quiz")}>Start quiz</button>
             </form>
-            <button onClick={() => toggleScreen("quiz")}>Start quiz</button>
         </section>
     )
 }

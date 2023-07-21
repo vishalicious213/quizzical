@@ -66,10 +66,24 @@
     background-color: whitesmoke;
 }
 
+select {
+    border-radius: .5rem;
+    border: 1px solid var(--blue);
+    outline: none;
+    width: 90%;
+    padding: .25rem;
+    cursor: pointer;
+}
+
 .radio-container {
     margin-right: 1.5rem;
 }
 
 .radio {
     margin-right: .25rem;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
 }

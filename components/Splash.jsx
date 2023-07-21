@@ -27,7 +27,7 @@ export default function Splash({screen, toggleScreen}) {
                     <legend>Category</legend>
 
                     <select 
-                        id="favColor"
+                        id="category"
                         value={formData.category}
                         onChange={handleChange}
                         name="category"

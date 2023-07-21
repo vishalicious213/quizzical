@@ -43,9 +43,15 @@ export default function Splash({screen, toggleScreen}) {
         console.log(apiResponse)
         if (apiResponse.response_code === 1) {
             console.log("Not enough questions of that type")
+            warning()
         } else {
             toggleScreen("quiz")
         }
+    }
+
+    function warning() {
+        const warningEl = document.getElementById("warning")
+        warningEl.textContent = "Not enough questions of that type"
     }
 
     return (
@@ -175,6 +181,8 @@ export default function Splash({screen, toggleScreen}) {
                         <label htmlFor="boolean">True / False</label>
                     </div>
                 </fieldset>
+                
+                <div id="warning" className="warning"></div>
 
                 <button className="start-btn">Start quiz</button>
             </form>

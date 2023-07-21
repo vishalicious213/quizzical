@@ -30,14 +30,18 @@ export default function Splash({screen, toggleScreen}) {
         return urlParams
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault()
         let urlParams = getParams()
+        let apiResponse = {}
+
         console.log(urlParams)
-        fetch(`https://opentdb.com/api.php${urlParams}`)
+        await fetch(`https://opentdb.com/api.php${urlParams}`)
             .then(response => response.json())
-            .then(data => console.log(data))
-        toggleScreen("quiz")
+            .then(data => apiResponse = data)
+
+        console.log(apiResponse)
+        // toggleScreen("quiz")
     }
 
     return (

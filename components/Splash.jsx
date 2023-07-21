@@ -34,24 +34,29 @@ export default function Splash({screen, toggleScreen}) {
                     >
                         <option value="">- Choose -</option>
                         <option value="general">General Knowledge</option>
-                        <option value="books">Entertainmant: Books</option>
-                        <option value="film">Entertainmant: Film</option>
-                        <option value="music">Entertainmant: Music</option>
-                        <option value="musicals">Entertainmant: Musicals & Theatres</option>
-                        <option value="tv">Entertainmant: Television</option>
-                        <option value="video-games">Entertainmant: Video Games</option>
-                        <option value="board-games">Entertainmant: Board Games</option>
-                        <option value="comics">Entertainmant: Comics</option>
-                        <option value="anime">Entertainmant: Anime & Manga</option>
-                        <option value="cartoons">Entertainmant: Cartoon & Animation</option>
+                        <option value="anime">Entertainment: Anime & Manga</option>
+                        <option value="board-games">Entertainment: Board Games</option>
+                        <option value="books">Entertainment: Books</option>
+                        <option value="cartoons">Entertainment: Cartoon & Animation</option>
+                        <option value="comics">Entertainment: Comics</option>
+                        <option value="film">Entertainment: Film</option>
+                        <option value="music">Entertainment: Music</option>
+                        <option value="musicals">Entertainment: Musicals & Theatres</option>
+                        <option value="tv">Entertainment: Television</option>
+                        <option value="video-games">Entertainment: Video Games</option>
                         <option value="science">Science & Nature</option>
                         <option value="computers">Science: Computers</option>
+                        <option value="gadgets">Science: Gadgets</option>
                         <option value="math">Science: Mathematics</option>
-                        <option value="myth">Mythology</option>
-                        <option value="sports">Sports</option>
+                        <option value="animals">Animals</option>
+                        <option value="art">Art</option>
+                        <option value="celebrities">Celebrities</option>
                         <option value="geography">Geography</option>
                         <option value="history">History</option>
+                        <option value="myth">Mythology</option>
                         <option value="politics">Politics</option>
+                        <option value="sports">Sports</option>
+                        <option value="vehicles">Vehicles</option>
                     </select>
                 </fieldset>
 

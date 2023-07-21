@@ -17,12 +17,17 @@ export default function Splash({screen, toggleScreen}) {
         })
     }
 
+    function handleSubmit(event) {
+        event.preventDefault()
+        toggleScreen("quiz")
+    }
+
     return (
         <section className="splash">
             <h1>Quizzical</h1>
             <div className="splash-desc">Test your knowledge on a variety of fun and interesting topics</div>
             
-            <form className="setup-form">
+            <form className="setup-form" onSubmit={handleSubmit}>
                 <fieldset className="category">
                     <legend>Category</legend>
 
@@ -132,7 +137,7 @@ export default function Splash({screen, toggleScreen}) {
                     </div>
                 </fieldset>
 
-                <button className="start-btn" onClick={() => toggleScreen("quiz")}>Start quiz</button>
+                <button className="start-btn">Start quiz</button>
             </form>
         </section>
     )

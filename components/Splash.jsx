@@ -41,7 +41,11 @@ export default function Splash({screen, toggleScreen}) {
             .then(data => apiResponse = data)
 
         console.log(apiResponse)
-        // toggleScreen("quiz")
+        if (apiResponse.response_code === 1) {
+            console.log("Not enough questions of that type")
+        } else {
+            toggleScreen("quiz")
+        }
     }
 
     return (

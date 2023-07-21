@@ -95,3 +95,13 @@ label {
     text-align: center;
     height: 1rem;
 }
+
+/* QUIZ */
+
+.question {
+    margin-bottom: 1rem;
+}
+
+.question-title {
+    font-size: 1rem;
+}

@@ -4,7 +4,7 @@ export default function Splash({screen, toggleScreen}) {
     const [formData, setFormData] = useState({
         category: "general",
         difficulty: "easy",
-        type: "multi"
+        type: "both"
     })
 
     function handleChange(event) {
@@ -19,6 +19,9 @@ export default function Splash({screen, toggleScreen}) {
 
     function handleSubmit(event) {
         event.preventDefault()
+        fetch("https://opentdb.com/api.php?amount=10")
+            .then(response => response.json())
+            .then(data => console.log(data))
         toggleScreen("quiz")
     }
 
@@ -109,6 +112,19 @@ export default function Splash({screen, toggleScreen}) {
 
                 <fieldset className="type">
                     <legend>Question type</legend>
+
+                    <div className="radio-container">
+                        <input 
+                            className="radio"
+                            type="radio"
+                            id="both"
+                            name="type"
+                            value="both"
+                            checked={formData.type === "both"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="both">Any type</label>
+                    </div>
                     
                     <div className="radio-container">
                         <input 

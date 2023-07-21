@@ -65,6 +65,36 @@ export default function Splash({screen, toggleScreen}) {
                         <label htmlFor="hard">Hard</label>
                     </div>
                 </fieldset>
+
+                <fieldset className="type">
+                    <legend>Question type</legend>
+                    
+                    <div className="radio-container">
+                        <input 
+                            className="radio"
+                            type="radio"
+                            id="multi"
+                            name="type"
+                            value="multi"
+                            checked={formData.type === "multi"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="multi">Multiple choice</label>
+                    </div>
+
+                    <div className="radio-container">
+                        <input 
+                            className="radio"
+                            type="radio"
+                            id="tf"
+                            name="type"
+                            value="tf"
+                            checked={formData.type === "tf"}
+                            onChange={handleChange}
+                        />
+                        <label htmlFor="tf">True / False</label>
+                    </div>
+                </fieldset>
             </form>
             <button onClick={() => toggleScreen("quiz")}>Start quiz</button>
         </section>

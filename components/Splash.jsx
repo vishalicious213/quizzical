@@ -145,26 +145,26 @@ export default function Splash({screen, toggleScreen}) {
                         <input 
                             className="radio"
                             type="radio"
-                            id="multi"
+                            id="multiple"
                             name="type"
-                            value="multi"
-                            checked={formData.type === "multi"}
+                            value="multiple"
+                            checked={formData.type === "multiple"}
                             onChange={handleChange}
                         />
-                        <label htmlFor="multi">Multiple choice</label>
+                        <label htmlFor="multiple">Multiple choice</label>
                     </div>
 
                     <div className="radio-container">
                         <input 
                             className="radio"
                             type="radio"
-                            id="tf"
+                            id="boolean"
                             name="type"
-                            value="tf"
-                            checked={formData.type === "tf"}
+                            value="boolean"
+                            checked={formData.type === "boolean"}
                             onChange={handleChange}
                         />
-                        <label htmlFor="tf">True / False</label>
+                        <label htmlFor="boolean">True / False</label>
                     </div>
                 </fieldset>
 

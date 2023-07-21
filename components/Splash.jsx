@@ -2,9 +2,9 @@ import { useState } from "react"
 
 export default function Splash({screen, toggleScreen}) {
     const [formData, setFormData] = useState({
-        category: "",
-        difficulty: "",
-        type: ""
+        category: "general",
+        difficulty: "easy",
+        type: "multi"
     })
 
     function handleChange(event) {
@@ -32,8 +32,10 @@ export default function Splash({screen, toggleScreen}) {
                         onChange={handleChange}
                         name="category"
                     >
-                        <option value="">- Choose -</option>
                         <option value="general">General Knowledge</option>
+                        <option value="animals">Animals</option>
+                        <option value="art">Art</option>
+                        <option value="celebrities">Celebrities</option>
                         <option value="anime">Entertainment: Anime & Manga</option>
                         <option value="board-games">Entertainment: Board Games</option>
                         <option value="books">Entertainment: Books</option>
@@ -44,17 +46,14 @@ export default function Splash({screen, toggleScreen}) {
                         <option value="musicals">Entertainment: Musicals & Theatres</option>
                         <option value="tv">Entertainment: Television</option>
                         <option value="video-games">Entertainment: Video Games</option>
-                        <option value="science">Science & Nature</option>
-                        <option value="computers">Science: Computers</option>
-                        <option value="gadgets">Science: Gadgets</option>
-                        <option value="math">Science: Mathematics</option>
-                        <option value="animals">Animals</option>
-                        <option value="art">Art</option>
-                        <option value="celebrities">Celebrities</option>
                         <option value="geography">Geography</option>
                         <option value="history">History</option>
                         <option value="myth">Mythology</option>
                         <option value="politics">Politics</option>
+                        <option value="science">Science & Nature</option>
+                        <option value="computers">Science: Computers</option>
+                        <option value="gadgets">Science: Gadgets</option>
+                        <option value="math">Science: Mathematics</option>
                         <option value="sports">Sports</option>
                         <option value="vehicles">Vehicles</option>
                     </select>

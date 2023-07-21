@@ -52,6 +52,7 @@ export default function Splash({screen, toggleScreen}) {
     function warning() {
         const warningEl = document.getElementById("warning")
         warningEl.textContent = "Not enough questions of that type"
+        setTimeout(() => warningEl.textContent = "", 3000)
     }
 
     return (

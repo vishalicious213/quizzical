@@ -1,3 +1,5 @@
+import { decode } from "html-entities"
+
 export default function Quiz({toggleScreen, questions}) {
     console.log(questions)
 
@@ -12,11 +14,11 @@ export default function Quiz({toggleScreen, questions}) {
 
                     return (
                         <div key={index} className="question">
-                            <h2 className="question-title">{question.question}</h2>
+                            <h2 className="question-title">{decode(question.question)}</h2>
                             {
                                 answersArr.map((answer, index) => {
                                     return (
-                                        <button key={index} className="answer">{answer}</button>
+                                        <button key={index} className="answer">{decode(answer)}</button>
                                     )
                                 })
                             }

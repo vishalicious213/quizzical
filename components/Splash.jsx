@@ -23,6 +23,30 @@ export default function Splash({screen, toggleScreen}) {
             <div className="splash-desc">Test your knowledge on a variety of fun and interesting topics</div>
             
             <form className="setup-form">
+                <fieldset className="category">
+                    <legend>Category</legend>
+
+                    <select 
+                        id="favColor"
+                        value={formData.category}
+                        onChange={handleChange}
+                        name="category"
+                    >
+                        <option value="">- Choose -</option>
+                        <option value="general">General Knowledge</option>
+                        <option value="books">Entertainmant: Books</option>
+                        <option value="film">Entertainmant: Film</option>
+                        <option value="music">Entertainmant: Music</option>
+                        <option value="musicals">Entertainmant: Musicals & Theatres</option>
+                        <option value="tv">Entertainmant: Television</option>
+                        <option value="video-games">Entertainmant: Video Games</option>
+                        <option value="board-games">Entertainmant: Board Games</option>
+                        <option value="comics">Entertainmant: Comics</option>
+                        <option value="anime">Entertainmant: Anime & Manga</option>
+                        <option value="cartoons">Entertainmant: Cartoon & Animation</option>
+                    </select>
+                </fieldset>
+
                 <fieldset className="difficulty">
                     <legend>Difficulty</legend>
                     

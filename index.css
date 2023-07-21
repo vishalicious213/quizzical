@@ -105,6 +105,7 @@ label {
 
 .question-title {
     font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 .answer {
@@ -113,4 +114,9 @@ label {
     padding: .25rem 1.25rem;
     border: 1px solid var(--blue);
     border-radius: .75rem;
+}
+
+.answer:hover {
+    background-color: var(--answerbackhover);
+    border: 1px solid var(--answerbackhover);
 }

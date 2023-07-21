@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export default function Splash({toggleScreen, updateQuestions}) {
     const [formData, setFormData] = useState({
-        category: "general",
+        category: "9",
         difficulty: "easy",
         type: "both"
     })

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Splash({screen, toggleScreen}) {
+export default function Splash({toggleScreen}) {
     const [formData, setFormData] = useState({
         category: "general",
         difficulty: "easy",
@@ -42,7 +42,6 @@ export default function Splash({screen, toggleScreen}) {
 
         console.log(apiResponse)
         if (apiResponse.response_code === 1) {
-            console.log("Not enough questions of that type")
             warning()
         } else {
             toggleScreen("quiz")

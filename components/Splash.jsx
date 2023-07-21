@@ -44,6 +44,14 @@ export default function Splash({screen, toggleScreen}) {
                         <option value="comics">Entertainmant: Comics</option>
                         <option value="anime">Entertainmant: Anime & Manga</option>
                         <option value="cartoons">Entertainmant: Cartoon & Animation</option>
+                        <option value="science">Science & Nature</option>
+                        <option value="computers">Science: Computers</option>
+                        <option value="math">Science: Mathematics</option>
+                        <option value="myth">Mythology</option>
+                        <option value="sports">Sports</option>
+                        <option value="geography">Geography</option>
+                        <option value="history">History</option>
+                        <option value="politics">Politics</option>
                     </select>
                 </fieldset>
 

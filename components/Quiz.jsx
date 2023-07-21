@@ -17,7 +17,7 @@ export default function Quiz({toggleScreen, questions}) {
                             {
                                 answersArr.map((answer, index) => {
                                     return (
-                                        <button key={index}>{answer}</button>
+                                        <button key={index} className="answer">{answer}</button>
                                     )
                                 })
                             }

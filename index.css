@@ -3,6 +3,7 @@
     --lightblue: #29389b;
     --offwhite: #F5F7FB;
     --answerbackhover: #D6DBF5;
+    --questiondivider: #DBDEF0;
 }
 
 * {
@@ -99,8 +100,15 @@ label {
 
 /* QUIZ */
 
+.quiz {
+    max-width: 500px;
+    margin: 2.5rem auto;
+}
+
 .question {
-    margin-bottom: 1rem;
+    margin: 0 1rem 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--questiondivider);
 }
 
 .question-title {

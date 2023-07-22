@@ -31,9 +31,10 @@ export default function Quiz({toggleScreen, questions}) {
         console.log("QUIZZED")
     }
 
-    function handleChange(event) {
+    function handleChange(event, qIndex) {
         const {name, value} = event.target
-        console.log(name, value)
+        console.log(event.target)
+        console.log(`q${qIndex}`, name, value)
         // setFormData(prevFormData => {
         //     return {
         //         ...prevFormData,
@@ -67,13 +68,13 @@ export default function Quiz({toggleScreen, questions}) {
                                         <div key={aIndex} className="answer">
                                             <input 
                                                 type="radio"
-                                                id={`a${aIndex}`}
+                                                id={`q${qIndex}a${aIndex}`}
                                                 name={`q${qIndex}`}
                                                 value={decode(answer)}
-                                                checked={decode(formData.employment) === decode(answer)}
-                                                onChange={handleChange}
+                                                checked={formData[`q${qIndex}`] === decode(answer)}
+                                                onChange={(event) => handleChange(event, qIndex)}
                                             />
-                                            <label htmlFor={`a${aIndex}`}>{decode(answer)}</label>
+                                            <label htmlFor={`q${qIndex}a${aIndex}`}>{decode(answer)}</label>
                                         </div>
                                     )
                                 })

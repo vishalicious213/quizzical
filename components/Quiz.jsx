@@ -48,7 +48,18 @@ export default function Quiz({toggleScreen, questions}) {
                             {
                                 answersArr.map((answer, index) => {
                                     return (
-                                        <button key={index} className="answer">{decode(answer)}</button>
+                                        // <button key={index} className="answer">{decode(answer)}</button>
+                                        <div>
+                                            <input 
+                                                type="radio"
+                                                id={`q${index}`}
+                                                name={`q${index}`}
+                                                value={decode(answer)}
+                                                checked={formData.employment === decode(answer)}
+                                                onChange={handleChange}
+                                            />
+                                            <label htmlFor={`q${index}`}>{decode(answer)}</label>
+                                        </div>
                                     )
                                 })
                             }

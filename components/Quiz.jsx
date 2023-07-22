@@ -59,7 +59,7 @@ export default function Quiz({toggleScreen, questions}) {
                                 answersArr.map((answer, index) => {
                                     return (
                                         // <button key={index} className="answer">{decode(answer)}</button>
-                                        <div>
+                                        <div key={index} className="answer">
                                             <input 
                                                 type="radio"
                                                 id={`q${index}`}

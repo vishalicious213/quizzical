@@ -105,12 +105,26 @@ label {
     padding: .25rem 1.25rem;
     border: 1px solid var(--blue);
     border-radius: .75rem;
+    text-align: center;
 }
 
 .answer:hover {
     background-color: var(--answerbackhover);
     border: 1px solid var(--answerbackhover);
     cursor: pointer;
+}
+
+.answer:hover label {
+    background-color: var(--answerbackhover);
+}
+
+.answer input {
+    visibility: hidden;
+}
+
+.answer label {
+    margin-left: -1rem;
+    font-size: .9rem;
 }
 
 /* BUTTONS */

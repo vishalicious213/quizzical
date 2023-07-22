@@ -75,24 +75,6 @@ label {
     cursor: pointer;
 }
 
-.start-btn {
-    display: block;
-    width: 12rem;
-    height: 3.25rem;
-    border-radius: 1rem;
-    color: var(--offwhite);
-    background-color: var(--blue);
-    border: none;
-    outline: none;
-    margin: 2rem auto 0;
-}
-
-.start-btn:hover {
-    color: white;
-    background-color: var(--lightblue);
-    cursor: pointer;
-}
-
 .warning {
     color: red;
     text-align: center;
@@ -128,5 +110,25 @@ label {
 .answer:hover {
     background-color: var(--answerbackhover);
     border: 1px solid var(--answerbackhover);
+    cursor: pointer;
+}
+
+/* BUTTONS */
+
+.start-btn, .quiz-btn {
+    display: block;
+    width: 12rem;
+    height: 3.25rem;
+    border-radius: 1rem;
+    color: var(--offwhite);
+    background-color: var(--blue);
+    border: none;
+    outline: none;
+    margin: 2rem auto 0;
+}
+
+.start-btn:hover, .quiz-btn:hover {
+    color: white;
+    background-color: var(--lightblue);
     cursor: pointer;
 }

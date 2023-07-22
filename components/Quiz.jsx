@@ -17,8 +17,13 @@ export default function Quiz({toggleScreen, questions}) {
         }
     }
 
+    function handleSubmit(event) {
+        event.preventDefault()
+        console.log("QUIZZED")
+    }
+
     return (
-        <section className="quiz">
+        <form className="quiz" onSubmit={handleSubmit}>
             {
                 questions.map((question, index) => {
                     let answersArr = [
@@ -42,6 +47,8 @@ export default function Quiz({toggleScreen, questions}) {
                     )
                 })
             }
-        </section>
+
+            <button className="quiz-btn">Check answers</button>
+        </form>
     )
 }

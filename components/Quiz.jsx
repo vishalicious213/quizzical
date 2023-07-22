@@ -7,7 +7,6 @@ export default function Quiz({toggleScreen, questions}) {
         if (array.length === 2 ) {
             array.sort()
             array.reverse()
-            console.log(array)
         }
 
         if (array.length > 2) {

@@ -128,4 +128,5 @@ label {
 .answer:hover {
     background-color: var(--answerbackhover);
     border: 1px solid var(--answerbackhover);
+    cursor: pointer;
 }

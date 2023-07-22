@@ -1,6 +1,15 @@
+import { useState } from "react"
 import { decode } from "html-entities"
 
 export default function Quiz({toggleScreen, questions}) {
+    const [formData, setFormData] = useState({
+        q0: "",
+        q1: "",
+        q2: "",
+        q3: "",
+        q4: ""
+    })
+
     console.log(questions)
 
     function shuffleAnswers(array) {

@@ -31,6 +31,16 @@ export default function Quiz({toggleScreen, questions}) {
         console.log("QUIZZED")
     }
 
+    function handleChange(event) {
+        const {name, value} = event.target
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [name]: value
+            }
+        })
+    }
+
     return (
         <form className="quiz" onSubmit={handleSubmit}>
             {

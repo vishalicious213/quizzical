@@ -33,42 +33,47 @@ export default function Quiz({toggleScreen, questions}) {
 
     function handleChange(event) {
         const {name, value} = event.target
-        setFormData(prevFormData => {
-            return {
-                ...prevFormData,
-                [name]: value
-            }
-        })
+        console.log(name, value)
+        // setFormData(prevFormData => {
+        //     return {
+        //         ...prevFormData,
+        //         [name]: value
+        //     }
+        // })
+
+        // console.log(formData)
     }
 
     return (
         <form className="quiz" onSubmit={handleSubmit}>
             {
-                questions.map((question, index) => {
+                questions.map((question, qIndex) => {
                     let answersArr = [
                         ...question.incorrect_answers,
                         question.correct_answer
                     ]
 
                     shuffleAnswers(answersArr)
+                    console.log(qIndex, answersArr)
 
                     return (
-                        <div key={index} className="question">
+                        <div key={qIndex} className="question">
                             <h2 className="question-title">{decode(question.question)}</h2>
                             {
-                                answersArr.map((answer, index) => {
+                                answersArr.map((answer, aIndex) => {
+                                    console.log(`q${qIndex}`, `a${aIndex}`, answer)
                                     return (
                                         // <button key={index} className="answer">{decode(answer)}</button>
-                                        <div key={index} className="answer">
+                                        <div key={aIndex} className="answer">
                                             <input 
                                                 type="radio"
-                                                id={`q${index}`}
-                                                name={`q${index}`}
+                                                id={`a${aIndex}`}
+                                                name={`q${qIndex}`}
                                                 value={decode(answer)}
-                                                checked={formData.employment === decode(answer)}
+                                                checked={decode(formData.employment) === decode(answer)}
                                                 onChange={handleChange}
                                             />
-                                            <label htmlFor={`q${index}`}>{decode(answer)}</label>
+                                            <label htmlFor={`a${aIndex}`}>{decode(answer)}</label>
                                         </div>
                                     )
                                 })

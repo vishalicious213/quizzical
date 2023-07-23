@@ -10,19 +10,38 @@ export default function Quiz({toggleScreen, questions}) {
         q4: ""
     })
 
-    console.log(questions)
+    // console.log(questions)
+
+    function isBlank(item) {
+        if (item === "") {
+            return true
+        } else {
+            return false
+        }
+    }
 
     function shuffleAnswers(array) {
+        let questionsFromState = Object.values(formData)
+        
         if (array.length === 2 ) {
             array.sort()
             array.reverse()
         }
 
-        if (array.length > 2) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
+        // let result = questionsFromState.every(isBlank)
+        // console.log(result)
+
+        if (questionsFromState.every(isBlank)) {
+            console.log("state is empty")    
+            if (array.length > 2) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
             }
+        } else {
+            console.log("state has data")
+            console.log(questionsFromState)
         }
     }
 
@@ -42,7 +61,7 @@ export default function Quiz({toggleScreen, questions}) {
             }
         })
 
-        console.log(formData)
+        console.log("formData", formData)
     }
 
     return (

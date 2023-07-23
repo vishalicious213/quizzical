@@ -28,21 +28,21 @@ export default function Quiz({toggleScreen, questions}) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log("QUIZZED")
+        console.log("QUIZZED", formData)
     }
 
     function handleChange(event, qIndex) {
         const {name, value} = event.target
-        console.log(event.target)
-        console.log(`q${qIndex}`, name, value)
-        // setFormData(prevFormData => {
-        //     return {
-        //         ...prevFormData,
-        //         [name]: value
-        //     }
-        // })
+        // console.log(event.target)
+        // console.log(`q${qIndex}`, name, value)
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [name]: value
+            }
+        })
 
-        // console.log(formData)
+        console.log(formData)
     }
 
     return (
@@ -55,14 +55,14 @@ export default function Quiz({toggleScreen, questions}) {
                     ]
 
                     shuffleAnswers(answersArr)
-                    console.log(qIndex, answersArr)
+                    // console.log(qIndex, answersArr)
 
                     return (
                         <div key={qIndex} className="question">
                             <h2 className="question-title">{decode(question.question)}</h2>
                             {
                                 answersArr.map((answer, aIndex) => {
-                                    console.log(`q${qIndex}`, `a${aIndex}`, answer)
+                                    // console.log(`q${qIndex}`, `a${aIndex}`, answer)
                                     return (
                                         // <button key={index} className="answer">{decode(answer)}</button>
                                         <div key={aIndex} className="answer">

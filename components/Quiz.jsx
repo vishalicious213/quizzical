@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { decode } from "html-entities"
 
 export default function Quiz({toggleScreen, questions}) {
@@ -10,10 +10,6 @@ export default function Quiz({toggleScreen, questions}) {
         q4: ""
     })
     const [shuffledAnswers, setShuffledAnswers] = useState(false)
-
-    useEffect(() => {
-        console.log("running effect")
-    }, [])
 
     function isBlank(item) {
         if (item === "") {

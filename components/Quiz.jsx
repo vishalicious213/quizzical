@@ -9,6 +9,7 @@ export default function Quiz({toggleScreen, questions}) {
         q3: "",
         q4: ""
     })
+    const [shuffledAnswers, setShuffledAnswers] = useState(false)
 
     useEffect(() => {
         console.log("running effect")
@@ -23,22 +24,32 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function shuffleAnswers(array) {
-        let questionsFromState = Object.values(formData)
-        console.log(questionsFromState)
-        
-        if (array.length === 2 ) {
-            array.sort()
-            array.reverse()
-        }
-
-        if (questionsFromState.every(isBlank)) {
-            if (array.length > 2) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
+        console.log("shuffledAnswers", shuffledAnswers)
+        if (shuffledAnswers) {
+            return
+        } else {
+            console.log("shuffling")
+    
+            let questionsFromState = Object.values(formData)
+            console.log(array)
+            console.log(questionsFromState)
+            
+            if (array.length === 2 ) {
+                array.sort()
+                array.reverse()
+            }
+    
+            if (questionsFromState.every(isBlank)) {
+                if (array.length > 2) {
+                    for (let i = array.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [array[i], array[j]] = [array[j], array[i]];
+                    }
                 }
             }
         }
+
+        setShuffledAnswers(true)
     }
 
     function handleSubmit(event) {

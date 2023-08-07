@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { decode } from "html-entities"
 
 export default function Quiz({toggleScreen, questions}) {
@@ -10,6 +10,10 @@ export default function Quiz({toggleScreen, questions}) {
         q4: ""
     })
 
+    useEffect(() => {
+        console.log("running effect")
+    }, [])
+
     function isBlank(item) {
         if (item === "") {
             return true
@@ -20,6 +24,7 @@ export default function Quiz({toggleScreen, questions}) {
 
     function shuffleAnswers(array) {
         let questionsFromState = Object.values(formData)
+        console.log(questionsFromState)
         
         if (array.length === 2 ) {
             array.sort()

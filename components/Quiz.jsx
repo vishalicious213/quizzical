@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { decode } from "html-entities"
 
 export default function Quiz({toggleScreen, questions}) {
@@ -8,9 +8,16 @@ export default function Quiz({toggleScreen, questions}) {
             answer: questions[0].correct_answer,
             wrong: questions[0].incorrect_answers
         }
-
     ])
-    console.log(questions)
+
+    useEffect(() => {
+        generateQuestions()
+    }, [])
+
+    function generateQuestions() {
+        console.log(questions)
+    }
+
     console.log(formData)
     return (
         <section>

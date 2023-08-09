@@ -45,6 +45,14 @@ export default function Quiz({toggleScreen, questions}) {
         return answersArr
     }
 
+    function handleChange() {
+        console.log("change handler")
+    }
+
+    function handleSubmit() {
+        console.log("submit handler")
+    }
+
     console.log(formData)
 
     return (

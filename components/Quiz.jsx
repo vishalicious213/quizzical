@@ -21,7 +21,6 @@ export default function Quiz({toggleScreen, questions}) {
             questionsArray.push(newQuestion)
         })
 
-        // console.log(questionsArray)
         setFormData(questionsArray)
     }
 

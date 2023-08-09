@@ -56,8 +56,35 @@ export default function Quiz({toggleScreen, questions}) {
     console.log(formData)
 
     return (
-        <section>
-            QUIZ
-        </section>
+        <form className="quiz" onSubmit={handleSubmit}>
+            {
+                formData.map((quizItem, qIndex) => {
+                    return (
+                        <div key={qIndex} className="question">
+                            <h2 className="question-title">{decode(quizItem.question)}</h2>
+                            {
+                                quizItem.answers.map((answer, aIndex) => {
+                                    return (
+                                        <div key={aIndex} className="answer">
+                                            <input 
+                                                type="radio"
+                                                id={`q${qIndex}a${aIndex}`}
+                                                name={`q${qIndex}`}
+                                                value={decode(answer)}
+                                                checked={formData[`q${qIndex}`] === decode(answer)}
+                                                onChange={(event) => handleChange(event, qIndex)}
+                                            />
+                                            <label htmlFor={`q${qIndex}a${aIndex}`}>{decode(answer)}</label>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    )
+                })
+            }
+
+            <button className="quiz-btn">Check answers</button>
+        </form>
     )
 }

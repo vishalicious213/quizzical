@@ -10,15 +10,15 @@ export default function Quiz({toggleScreen, questions}) {
 
     function generateQuestions() {
         let questionsArray = []
-        
+
         questions.forEach(q => {
+            let shuffledAnswers = shuffleAnswers([...q.incorrect_answers, q.correct_answer])
             let newQuestion = {
                 question: q.question,
-                answers: [...q.incorrect_answers, q.correct_answer],
+                answers: shuffledAnswers,
                 correct: q.correct_answer
             }
 
-            shuffleAnswers(newQuestion.answers)
             questionsArray.push(newQuestion)
         })
 
@@ -38,7 +38,7 @@ export default function Quiz({toggleScreen, questions}) {
             }
         }
 
-        console.log(answersArr)
+        return answersArr
     }
 
     console.log(formData)

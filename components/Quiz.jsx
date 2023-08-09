@@ -3,7 +3,7 @@ import { decode } from "html-entities"
 
 export default function Quiz({toggleScreen, questions}) {
     const [formData, setFormData] = useState([])
-    const [selectedAnswer, setSelectedAnswer] = useState({0:9, 1:8, 2:7, 3:6, 4:5})
+    const [selectedAnswer, setSelectedAnswer] = useState({0:"", 1:"", 2:"", 3:"", 4:""})
 
     useEffect(() => {
         generateQuestions()
@@ -49,6 +49,13 @@ export default function Quiz({toggleScreen, questions}) {
     function handleChange(event, index) {
         console.log(index, event.target.value, decode(formData[index].correct))
         console.log(selectedAnswer[index])
+
+        setSelectedAnswer(prevState => ({
+            ...prevState,
+            [index]: event.target.value
+        }))
+
+        console.log(selectedAnswer)
 
         if (event.target.value === decode(formData[index].correct)) {
             console.log("Correct")

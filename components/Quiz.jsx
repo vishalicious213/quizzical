@@ -8,6 +8,7 @@ export default function Quiz({toggleScreen, questions}) {
         generateQuestions()
     }, [])
 
+    // add questions and shuffled answers to state
     function generateQuestions() {
         let questionsArray = []
 
@@ -25,12 +26,15 @@ export default function Quiz({toggleScreen, questions}) {
         setFormData(questionsArray)
     }
 
+    // shuffle answers for each question
     function shuffleAnswers(answersArr) {
+        // true/false answers always show "True" first
         if (answersArr.length === 2 ) {
             answersArr.sort()
             answersArr.reverse()
         }
 
+        // multiple choice answers get shuffled
         if (answersArr.length > 2) {
             for (let i = answersArr.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -42,6 +46,7 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     console.log(formData)
+
     return (
         <section>
             QUIZ

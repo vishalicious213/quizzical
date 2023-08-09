@@ -49,7 +49,8 @@ export default function Quiz({toggleScreen, questions}) {
         console.log("change handler")
     }
 
-    function handleSubmit() {
+    function handleSubmit(event) {
+        event.preventDefault()
         console.log("submit handler")
     }
 

@@ -18,10 +18,19 @@ export default function Quiz({toggleScreen, questions}) {
                 correct: q.correct_answer
             }
 
+            shuffleAnswers(newQuestion.answers)
             questionsArray.push(newQuestion)
         })
 
         setFormData(questionsArray)
+    }
+
+    function shuffleAnswers(answersArr) {
+        if (answersArr.length === 2 ) {
+            answersArr.sort()
+            answersArr.reverse()
+        }
+        console.log(answersArr)
     }
 
     console.log(formData)

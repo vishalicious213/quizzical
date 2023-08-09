@@ -15,10 +15,29 @@ export default function Quiz({toggleScreen, questions}) {
     }, [])
 
     function generateQuestions() {
-        console.log(questions)
+        // console.log(questions)
+        let questionsArray = []
+        
+        questions.forEach(q => {
+            let newQuestion = {}
+            newQuestion.question = q.question
+            newQuestion.answers = [...q.incorrect_answers, q.correct_answer]
+            
+            console.log(q.question, q.correct_answer, q.incorrect_answers)
+            console.log(newQuestion)
+        }
+            // questionsArray.push(
+            // q.question,
+            // q.correct_answer,
+            // q.incorrect_answers
+        )
+
+        console.log(questionsArray)
+
+        // questions.forEach(q => console.log(q.question))
     }
 
-    console.log(formData)
+    // console.log(formData)
     return (
         <section>
             QUIZ

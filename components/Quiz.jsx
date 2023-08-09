@@ -45,8 +45,8 @@ export default function Quiz({toggleScreen, questions}) {
         return answersArr
     }
 
-    function handleChange() {
-        console.log("change handler")
+    function handleChange(event, index) {
+        console.log(index, event.target.value)
     }
 
     function handleSubmit(event) {

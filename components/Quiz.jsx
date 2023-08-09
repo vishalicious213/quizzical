@@ -30,6 +30,14 @@ export default function Quiz({toggleScreen, questions}) {
             answersArr.sort()
             answersArr.reverse()
         }
+
+        if (answersArr.length > 2) {
+            for (let i = answersArr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [answersArr[i], answersArr[j]] = [answersArr[j], answersArr[i]];
+            }
+        }
+
         console.log(answersArr)
     }
 

@@ -46,7 +46,13 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function handleChange(event, index) {
-        console.log(index, event.target.value)
+        console.log(index, event.target.value, decode(formData[index].correct))
+
+        if (event.target.value === decode(formData[index].correct)) {
+            console.log("Correct")
+        } else {
+            console.log("Incorrect")
+        }
     }
 
     function handleSubmit(event) {

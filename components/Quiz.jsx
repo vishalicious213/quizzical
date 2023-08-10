@@ -3,7 +3,6 @@ import { decode } from "html-entities"
 
 export default function Quiz({toggleScreen, questions}) {
     const [formData, setFormData] = useState([])
-    // const [selectedAnswer, setSelectedAnswer] = useState({0:"", 1:"", 2:"", 3:"", 4:""})
     const [submitted, setSubmitted] = useState(false)
 
     useEffect(() => {
@@ -49,14 +48,6 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function handleChange(event, index) {
-        // console.log(index, event.target.value, decode(formData[index].correct))
-        // console.log(selectedAnswer[index])
-
-        // setSelectedAnswer(prevState => ({
-        //     ...prevState,
-        //     [index]: event.target.value
-        // }))
-
         setFormData(prevState => {
             const updatedFormData = [...prevState]
 
@@ -67,10 +58,6 @@ export default function Quiz({toggleScreen, questions}) {
 
             return updatedFormData
         })
-
-        // console.log(selectedAnswer)
-        // console.log(formData)
-        // console.log(formData[index].selected)
 
         if (event.target.value === decode(formData[index].correct)) {
             console.log("Correct")
@@ -87,7 +74,6 @@ export default function Quiz({toggleScreen, questions}) {
 
     function buttonClass(qIndex, answer) {
         // console.log(qIndex, answer)
-        // console.log(formData[qIndex].selected)
 
         if (submitted && 
             formData[qIndex].selected === decode(answer) && 
@@ -118,15 +104,7 @@ export default function Quiz({toggleScreen, questions}) {
         } else {
             return ""
         }
-
-        // if (selectedAnswer[qIndex] === decode(answer)) {
-        //     return "selected-answer"
-        // } else {
-        //     return ""
-        // }
     }
-
-    // console.log(formData)
 
     return (
         <form className="quiz" onSubmit={handleSubmit}>

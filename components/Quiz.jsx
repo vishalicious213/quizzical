@@ -57,7 +57,29 @@ export default function Quiz({toggleScreen, questions}) {
             [index]: event.target.value
         }))
 
+        setFormData(prevState => {
+            const updatedFormData = [...prevState]
+
+            updatedFormData[index] = {
+                ...updatedFormData[index],
+                selected: event.target.value
+            }
+
+            return updatedFormData
+        })
+
+        // setFormData(prevState => ({
+        //     ...prevState,
+        //     [index]: {
+        //         ...prevState[index],
+        //         selected: event.target.value
+        //     }
+        //     // [index.selected]: event.target.value
+        // }))
+
         console.log(selectedAnswer)
+        console.log(formData)
+        console.log(formData[index].selected)
 
         if (event.target.value === decode(formData[index].correct)) {
             console.log("Correct")
@@ -73,7 +95,7 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function buttonClass(qIndex, answer) {
-        console.log(qIndex, answer)
+        // console.log(qIndex, answer)
         if (submitted && selectedAnswer[qIndex] === decode(answer)) {
             return "answer right-answer"
         } else if (submitted && selectedAnswer[qIndex] !== decode(answer)) {
@@ -92,6 +114,8 @@ export default function Quiz({toggleScreen, questions}) {
             return ""
         }
     }
+
+    console.log(formData)
 
     return (
         <form className="quiz" onSubmit={handleSubmit}>

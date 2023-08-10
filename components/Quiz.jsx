@@ -144,6 +144,8 @@ export default function Quiz({toggleScreen, questions}) {
                 })
             }
 
+            <div className={submitted ? "score show" : "score hide"}>You scored #/# correct answers.</div>
+
             <button className="quiz-btn">{submitted ? "Play again" : "Check answers"}</button>
         </form>
     )

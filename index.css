@@ -141,6 +141,19 @@ label {
     background-color: var(--answerwrong);
 }
 
+.score {
+    text-align: center;
+    font-weight: 700;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 /* BUTTONS */
 
 .start-btn, .quiz-btn {

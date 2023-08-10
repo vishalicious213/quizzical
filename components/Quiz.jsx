@@ -88,14 +88,14 @@ export default function Quiz({toggleScreen, questions}) {
         const correct = decode(formData[qIndex].correct)
 
         if (submitted && 
-            selected === decode(answer) && 
-            correct === decode(answer)) {
+            selected === answer && 
+            correct === answer) {
             return "answer right-answer"
         } else if (submitted && 
-            selected === decode(answer) && 
-            correct !== decode(answer)) {
+            selected === answer && 
+            correct !== answer) {
             return "answer wrong-answer"
-        } else if (selected === decode(answer)) {
+        } else if (selected === answer) {
                 return "answer selected-answer"
         } else {
             return "answer"
@@ -133,7 +133,7 @@ export default function Quiz({toggleScreen, questions}) {
                                     return (
                                         <div 
                                             key={aIndex} 
-                                            className={buttonClass(qIndex, answer)}
+                                            className={buttonClass(qIndex, decode(answer))}
                                         >
                                             <input 
                                                 type="radio"

@@ -3,7 +3,7 @@ import { decode } from "html-entities"
 
 export default function Quiz({toggleScreen, questions}) {
     const [formData, setFormData] = useState([])
-    const [selectedAnswer, setSelectedAnswer] = useState({0:"", 1:"", 2:"", 3:"", 4:""})
+    // const [selectedAnswer, setSelectedAnswer] = useState({0:"", 1:"", 2:"", 3:"", 4:""})
     const [submitted, setSubmitted] = useState(false)
 
     useEffect(() => {
@@ -52,10 +52,10 @@ export default function Quiz({toggleScreen, questions}) {
         // console.log(index, event.target.value, decode(formData[index].correct))
         // console.log(selectedAnswer[index])
 
-        setSelectedAnswer(prevState => ({
-            ...prevState,
-            [index]: event.target.value
-        }))
+        // setSelectedAnswer(prevState => ({
+        //     ...prevState,
+        //     [index]: event.target.value
+        // }))
 
         setFormData(prevState => {
             const updatedFormData = [...prevState]
@@ -68,18 +68,9 @@ export default function Quiz({toggleScreen, questions}) {
             return updatedFormData
         })
 
-        // setFormData(prevState => ({
-        //     ...prevState,
-        //     [index]: {
-        //         ...prevState[index],
-        //         selected: event.target.value
-        //     }
-        //     // [index.selected]: event.target.value
-        // }))
-
-        console.log(selectedAnswer)
-        console.log(formData)
-        console.log(formData[index].selected)
+        // console.log(selectedAnswer)
+        // console.log(formData)
+        // console.log(formData[index].selected)
 
         if (event.target.value === decode(formData[index].correct)) {
             console.log("Correct")
@@ -96,11 +87,12 @@ export default function Quiz({toggleScreen, questions}) {
 
     function buttonClass(qIndex, answer) {
         // console.log(qIndex, answer)
-        if (submitted && selectedAnswer[qIndex] === decode(answer)) {
+
+        if (submitted && formData[qIndex].correct === decode(answer)) {
             return "answer right-answer"
-        } else if (submitted && selectedAnswer[qIndex] !== decode(answer)) {
+        } else if (submitted && formData[qIndex].correct !== decode(answer)) {
             return "answer wrong-answer"
-        } else if (selectedAnswer[qIndex] === decode(answer)) {
+        } else if (formData[qIndex].selected === decode(answer)) {
                 return "answer selected-answer"
         } else {
             return "answer"
@@ -108,14 +100,14 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function labelClass(qIndex, answer) {
-        if (selectedAnswer[qIndex] === decode(answer)) {
-            return "selected-answer"
-        } else {
-            return ""
-        }
+        // if (selectedAnswer[qIndex] === decode(answer)) {
+        //     return "selected-answer"
+        // } else {
+        //     return ""
+        // }
     }
 
-    console.log(formData)
+    // console.log(formData)
 
     return (
         <form className="quiz" onSubmit={handleSubmit}>

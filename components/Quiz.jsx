@@ -48,6 +48,7 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function handleChange(event, index) {
+        // update formData and set "selected" to button's value
         setFormData(prevState => {
             const updatedFormData = [...prevState]
 
@@ -76,14 +77,14 @@ export default function Quiz({toggleScreen, questions}) {
         // console.log(qIndex, answer)
 
         if (submitted && 
-            formData[qIndex].selected === decode(answer) && 
-            formData[qIndex].correct === decode(answer)) {
+            decode(formData[qIndex].selected) === decode(answer) && 
+            decode(formData[qIndex].correct) === decode(answer)) {
             return "answer right-answer"
         } else if (submitted && 
-            formData[qIndex].selected === decode(answer) && 
-            formData[qIndex].correct !== decode(answer)) {
+            decode(formData[qIndex].selected) === decode(answer) && 
+            decode(formData[qIndex].correct) !== decode(answer)) {
             return "answer wrong-answer"
-        } else if (formData[qIndex].selected === decode(answer)) {
+        } else if (decode(formData[qIndex].selected) === decode(answer)) {
                 return "answer selected-answer"
         } else {
             return "answer"
@@ -92,14 +93,14 @@ export default function Quiz({toggleScreen, questions}) {
 
     function labelClass(qIndex, answer) {
         if (submitted && 
-            formData[qIndex].selected === decode(answer) && 
-            formData[qIndex].correct === decode(answer)) {
+            decode(formData[qIndex].selected) === decode(answer) && 
+            decode(formData[qIndex].correct)=== decode(answer)) {
             return "right-answer"
         } else if (submitted && 
-            formData[qIndex].selected === decode(answer) && 
-            formData[qIndex].correct !== decode(answer)) {
+            decode(formData[qIndex].selected) === decode(answer) && 
+            decode(formData[qIndex].correct)!== decode(answer)) {
             return "wrong-answer"
-        } else if (formData[qIndex].selected === decode(answer)) {
+        } else if (decode(formData[qIndex].selected) === decode(answer)) {
                 return "selected-answer"
         } else {
             return ""

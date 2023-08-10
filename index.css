@@ -127,6 +127,10 @@ label {
     font-size: .9rem;
 }
 
+.red {
+    background-color: red;
+}
+
 /* BUTTONS */
 
 .start-btn, .quiz-btn {

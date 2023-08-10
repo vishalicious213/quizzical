@@ -47,8 +47,8 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function handleChange(event, index) {
-        console.log(index, event.target.value, decode(formData[index].correct))
-        console.log(selectedAnswer[index])
+        // console.log(index, event.target.value, decode(formData[index].correct))
+        // console.log(selectedAnswer[index])
 
         setSelectedAnswer(prevState => ({
             ...prevState,
@@ -66,10 +66,9 @@ export default function Quiz({toggleScreen, questions}) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log("submit handler")
+        console.log("submit handler", formData)
     }
 
-    console.log(formData)
 
     return (
         <form className="quiz" onSubmit={handleSubmit}>
@@ -81,7 +80,10 @@ export default function Quiz({toggleScreen, questions}) {
                             {
                                 quizItem.answers.map((answer, aIndex) => {
                                     return (
-                                        <div key={aIndex} className="answer">
+                                        <div 
+                                            key={aIndex} 
+                                            className={selectedAnswer[qIndex] === decode(answer) ? "answer red" : "answer"}
+                                        >
                                             <input 
                                                 type="radio"
                                                 id={`q${qIndex}a${aIndex}`}
@@ -90,7 +92,12 @@ export default function Quiz({toggleScreen, questions}) {
                                                 checked={formData[`q${qIndex}`] === decode(answer)}
                                                 onChange={(event) => handleChange(event, qIndex)}
                                             />
-                                            <label htmlFor={`q${qIndex}a${aIndex}`}>{decode(answer)}</label>
+                                            <label 
+                                                htmlFor={`q${qIndex}a${aIndex}`}
+                                                className={selectedAnswer[qIndex] === decode(answer) ? "red" : ""}
+                                            >
+                                                {decode(answer)}
+                                            </label>
                                         </div>
                                     )
                                 })

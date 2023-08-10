@@ -89,9 +89,13 @@ export default function Quiz({toggleScreen, questions}) {
         // console.log(qIndex, answer)
         console.log(formData[qIndex].selected)
 
-        if (submitted && formData[qIndex].selected && formData[qIndex].correct === decode(answer)) {
+        if (submitted && 
+            formData[qIndex].selected === decode(answer) && 
+            formData[qIndex].correct === decode(answer)) {
             return "answer right-answer"
-        } else if (submitted && formData[qIndex].selected && formData[qIndex].correct !== decode(answer)) {
+        } else if (submitted && 
+            formData[qIndex].selected === decode(answer) && 
+            formData[qIndex].correct !== decode(answer)) {
             return "answer wrong-answer"
         } else if (formData[qIndex].selected === decode(answer)) {
                 return "answer selected-answer"

@@ -70,15 +70,21 @@ export default function Quiz({toggleScreen, questions}) {
         console.log("submit handler", formData)
     }
 
-    function theClass(qIndex, answer) {
+    function buttonClass(qIndex, answer) {
         if (selectedAnswer[qIndex] === decode(answer)) {
             return "answer selected-answer"
         } else {
             return "answer"
         }
-        // return "answer right-answer"
     }
 
+    function labelClass(qIndex, answer) {
+        if (selectedAnswer[qIndex] === decode(answer)) {
+            return "selected-answer"
+        } else {
+            return ""
+        }
+    }
 
     return (
         <form className="quiz" onSubmit={handleSubmit}>
@@ -92,7 +98,7 @@ export default function Quiz({toggleScreen, questions}) {
                                     return (
                                         <div 
                                             key={aIndex} 
-                                            className={theClass(qIndex, answer)}
+                                            className={buttonClass(qIndex, answer)}
                                         >
                                             <input 
                                                 type="radio"
@@ -104,7 +110,7 @@ export default function Quiz({toggleScreen, questions}) {
                                             />
                                             <label 
                                                 htmlFor={`q${qIndex}a${aIndex}`}
-                                                className={selectedAnswer[qIndex] === decode(answer) ? "selected-answer" : ""}
+                                                className={labelClass(qIndex, answer)}
                                             >
                                                 {decode(answer)}
                                             </label>

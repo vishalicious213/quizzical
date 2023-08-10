@@ -4,7 +4,7 @@ import { decode } from "html-entities"
 export default function Quiz({toggleScreen, questions}) {
     const [formData, setFormData] = useState([])
     const [selectedAnswer, setSelectedAnswer] = useState({0:"", 1:"", 2:"", 3:"", 4:""})
-    let answerClass = ""
+    const [submitted, setSubmitted] = useState(false)
 
     useEffect(() => {
         generateQuestions()
@@ -19,7 +19,8 @@ export default function Quiz({toggleScreen, questions}) {
             let newQuestion = {
                 question: q.question,
                 answers: shuffledAnswers,
-                correct: q.correct_answer
+                correct: q.correct_answer,
+                selected: false
             }
 
             questionsArray.push(newQuestion)
@@ -67,12 +68,18 @@ export default function Quiz({toggleScreen, questions}) {
 
     function handleSubmit(event) {
         event.preventDefault()
+        setSubmitted(true)
         console.log("submit handler", formData)
     }
 
     function buttonClass(qIndex, answer) {
-        if (selectedAnswer[qIndex] === decode(answer)) {
-            return "answer selected-answer"
+        console.log(qIndex, answer)
+        if (submitted && selectedAnswer[qIndex] === decode(answer)) {
+            return "answer right-answer"
+        } else if (submitted && selectedAnswer[qIndex] !== decode(answer)) {
+            return "answer wrong-answer"
+        } else if (selectedAnswer[qIndex] === decode(answer)) {
+                return "answer selected-answer"
         } else {
             return "answer"
         }

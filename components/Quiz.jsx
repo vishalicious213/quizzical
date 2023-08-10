@@ -4,6 +4,7 @@ import { decode } from "html-entities"
 export default function Quiz({toggleScreen, questions}) {
     const [formData, setFormData] = useState([])
     const [submitted, setSubmitted] = useState(false)
+    const [score, setScore] = useState(0)
 
     useEffect(() => {
         generateQuestions()
@@ -70,21 +71,31 @@ export default function Quiz({toggleScreen, questions}) {
     function handleSubmit(event) {
         event.preventDefault()
         setSubmitted(true)
+
+        formData.forEach(q => {
+            console.log(q.correct, q.selected)
+            if (q.correct === q.selected) {
+                setScore(prevScore => prevScore + 1)
+            }
+        })
+        
+        console.log(score)
         console.log("submit handler", formData)
     }
 
     function buttonClass(qIndex, answer) {
-        // console.log(qIndex, answer)
+        const selected = decode(formData[qIndex].selected)
+        const correct = decode(formData[qIndex].correct)
 
         if (submitted && 
-            decode(formData[qIndex].selected) === decode(answer) && 
-            decode(formData[qIndex].correct) === decode(answer)) {
+            selected === decode(answer) && 
+            correct === decode(answer)) {
             return "answer right-answer"
         } else if (submitted && 
-            decode(formData[qIndex].selected) === decode(answer) && 
-            decode(formData[qIndex].correct) !== decode(answer)) {
+            selected === decode(answer) && 
+            correct !== decode(answer)) {
             return "answer wrong-answer"
-        } else if (decode(formData[qIndex].selected) === decode(answer)) {
+        } else if (selected === decode(answer)) {
                 return "answer selected-answer"
         } else {
             return "answer"
@@ -144,7 +155,7 @@ export default function Quiz({toggleScreen, questions}) {
                 })
             }
 
-            <div className={submitted ? "score show" : "score hide"}>You scored #/# correct answers.</div>
+            <div className={submitted ? "score show" : "score hide"}>You scored {score}/{formData.length} correct answers.</div>
 
             <button className="quiz-btn">{submitted ? "Play again" : "Check answers"}</button>
         </form>

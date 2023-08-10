@@ -127,8 +127,8 @@ label {
     font-size: .9rem;
 }
 
-.red {
-    background-color: red;
+.selected-answer {
+    background-color: var(--answerbackhover);
 }
 
 /* BUTTONS */

@@ -82,7 +82,7 @@ export default function Quiz({toggleScreen, questions}) {
                                     return (
                                         <div 
                                             key={aIndex} 
-                                            className={selectedAnswer[qIndex] === decode(answer) ? "answer red" : "answer"}
+                                            className={selectedAnswer[qIndex] === decode(answer) ? "answer selected-answer" : "answer"}
                                         >
                                             <input 
                                                 type="radio"
@@ -94,7 +94,7 @@ export default function Quiz({toggleScreen, questions}) {
                                             />
                                             <label 
                                                 htmlFor={`q${qIndex}a${aIndex}`}
-                                                className={selectedAnswer[qIndex] === decode(answer) ? "red" : ""}
+                                                className={selectedAnswer[qIndex] === decode(answer) ? "selected-answer" : ""}
                                             >
                                                 {decode(answer)}
                                             </label>

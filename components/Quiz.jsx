@@ -4,6 +4,7 @@ import { decode } from "html-entities"
 export default function Quiz({toggleScreen, questions}) {
     const [formData, setFormData] = useState([])
     const [selectedAnswer, setSelectedAnswer] = useState({0:"", 1:"", 2:"", 3:"", 4:""})
+    let answerClass = ""
 
     useEffect(() => {
         generateQuestions()
@@ -69,6 +70,15 @@ export default function Quiz({toggleScreen, questions}) {
         console.log("submit handler", formData)
     }
 
+    function theClass(qIndex, answer) {
+        if (selectedAnswer[qIndex] === decode(answer)) {
+            return "answer selected-answer"
+        } else {
+            return "answer"
+        }
+        // return "answer right-answer"
+    }
+
 
     return (
         <form className="quiz" onSubmit={handleSubmit}>
@@ -82,7 +92,7 @@ export default function Quiz({toggleScreen, questions}) {
                                     return (
                                         <div 
                                             key={aIndex} 
-                                            className={selectedAnswer[qIndex] === decode(answer) ? "answer selected-answer" : "answer"}
+                                            className={theClass(qIndex, answer)}
                                         >
                                             <input 
                                                 type="radio"

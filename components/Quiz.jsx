@@ -103,15 +103,18 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function labelClass(qIndex, answer) {
+        const selected = decode(formData[qIndex].selected)
+        const correct = decode(formData[qIndex].correct)
+
         if (submitted && 
-            decode(formData[qIndex].selected) === decode(answer) && 
-            decode(formData[qIndex].correct)=== decode(answer)) {
+            selected === decode(answer) && 
+            correct === decode(answer)) {
             return "right-answer"
         } else if (submitted && 
-            decode(formData[qIndex].selected) === decode(answer) && 
-            decode(formData[qIndex].correct)!== decode(answer)) {
+            selected === decode(answer) && 
+            correct !== decode(answer)) {
             return "wrong-answer"
-        } else if (decode(formData[qIndex].selected) === decode(answer)) {
+        } else if (selected === decode(answer)) {
                 return "selected-answer"
         } else {
             return ""

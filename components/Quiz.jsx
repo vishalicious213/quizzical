@@ -87,7 +87,7 @@ export default function Quiz({toggleScreen, questions}) {
 
     function buttonClass(qIndex, answer) {
         // console.log(qIndex, answer)
-        console.log(formData[qIndex].selected)
+        // console.log(formData[qIndex].selected)
 
         if (submitted && 
             formData[qIndex].selected === decode(answer) && 
@@ -105,6 +105,20 @@ export default function Quiz({toggleScreen, questions}) {
     }
 
     function labelClass(qIndex, answer) {
+        if (submitted && 
+            formData[qIndex].selected === decode(answer) && 
+            formData[qIndex].correct === decode(answer)) {
+            return "right-answer"
+        } else if (submitted && 
+            formData[qIndex].selected === decode(answer) && 
+            formData[qIndex].correct !== decode(answer)) {
+            return "wrong-answer"
+        } else if (formData[qIndex].selected === decode(answer)) {
+                return "selected-answer"
+        } else {
+            return ""
+        }
+
         // if (selectedAnswer[qIndex] === decode(answer)) {
         //     return "selected-answer"
         // } else {

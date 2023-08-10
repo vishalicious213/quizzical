@@ -4,6 +4,8 @@
     --offwhite: #F5F7FB;
     --answerbackhover: #D6DBF5;
     --questiondivider: #DBDEF0;
+    --answerright: #94D7A2;
+    --answerwrong: #F8BCBC;
 }
 
 * {
@@ -129,6 +131,14 @@ label {
 
 .selected-answer {
     background-color: var(--answerbackhover);
+}
+
+.right-answer {
+    background-color: var(--answerright);
+}
+
+.wrong-answer {
+    background-color: var(--answerwrong);
 }
 
 /* BUTTONS */

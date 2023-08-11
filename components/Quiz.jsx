@@ -87,13 +87,9 @@ export default function Quiz({toggleScreen, questions}) {
         const selected = decode(formData[qIndex].selected)
         const correct = decode(formData[qIndex].correct)
 
-        if (submitted && 
-            selected === answer && 
-            correct === answer) {
+        if (submitted && selected === answer && correct === answer) {
             return "answer right-answer"
-        } else if (submitted && 
-            selected === answer && 
-            correct !== answer) {
+        } else if (submitted && selected === answer && correct !== answer) {
             return "answer wrong-answer"
         } else if (selected === answer) {
                 return "answer selected-answer"
@@ -106,13 +102,9 @@ export default function Quiz({toggleScreen, questions}) {
         const selected = decode(formData[qIndex].selected)
         const correct = decode(formData[qIndex].correct)
 
-        if (submitted && 
-            selected === answer && 
-            correct === answer) {
+        if (submitted && selected === answer && correct === answer) {
             return "right-answer"
-        } else if (submitted && 
-            selected === answer && 
-            correct !== answer) {
+        } else if (submitted && selected === answer && correct !== answer) {
             return "wrong-answer"
         } else if (selected === answer) {
                 return "selected-answer"

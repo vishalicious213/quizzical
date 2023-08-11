@@ -102,6 +102,8 @@ export default function Quiz({toggleScreen, questions}) {
             return "right-answer"
         } else if (submitted && selected === answer && correct !== answer) {
             return "wrong-answer"
+        } else if (submitted && correct === answer) {
+            return "right-answer"
         } else if (selected === answer) {
                 return "selected-answer"
         } else {

@@ -60,12 +60,6 @@ export default function Quiz({toggleScreen, questions}) {
 
             return updatedFormData
         })
-
-        // if (event.target.value === decode(formData[index].correct)) {
-        //     console.log("Correct")
-        // } else {
-        //     console.log("Incorrect")
-        // }
     }
 
     function handleSubmit(event) {

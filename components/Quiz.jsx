@@ -67,7 +67,6 @@ export default function Quiz({toggleScreen, questions}) {
         setSubmitted(true)
 
         formData.forEach(q => {
-            console.log(q.correct, q.selected)
             if (q.correct === q.selected) {
                 setScore(prevScore => prevScore + 1)
             }
@@ -76,9 +75,6 @@ export default function Quiz({toggleScreen, questions}) {
         if (submitted) {
             toggleScreen("splash")
         }
-        
-        console.log(score)
-        console.log("submit handler", formData)
     }
 
     function buttonClass(qIndex, answer) {

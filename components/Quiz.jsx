@@ -72,6 +72,10 @@ export default function Quiz({toggleScreen, questions}) {
                 setScore(prevScore => prevScore + 1)
             }
         })
+
+        if (submitted) {
+            toggleScreen("splash")
+        }
         
         console.log(score)
         console.log("submit handler", formData)

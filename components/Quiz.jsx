@@ -107,14 +107,14 @@ export default function Quiz({toggleScreen, questions}) {
         const correct = decode(formData[qIndex].correct)
 
         if (submitted && 
-            selected === decode(answer) && 
-            correct === decode(answer)) {
+            selected === answer && 
+            correct === answer) {
             return "right-answer"
         } else if (submitted && 
-            selected === decode(answer) && 
-            correct !== decode(answer)) {
+            selected === answer && 
+            correct !== answer) {
             return "wrong-answer"
-        } else if (selected === decode(answer)) {
+        } else if (selected === answer) {
                 return "selected-answer"
         } else {
             return ""
@@ -145,7 +145,7 @@ export default function Quiz({toggleScreen, questions}) {
                                             />
                                             <label 
                                                 htmlFor={`q${qIndex}a${aIndex}`}
-                                                className={labelClass(qIndex, answer)}
+                                                className={labelClass(qIndex, decode(answer))}
                                             >
                                                 {decode(answer)}
                                             </label>

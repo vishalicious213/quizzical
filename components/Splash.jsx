@@ -29,11 +29,7 @@ export default function Splash({toggleScreen, updateQuestions}) {
         }
 
         if (formData.token === "") {
-            console.log("no token")
             getToken()
-        } else {
-            console.log(localStorage.getItem("quizzical"))
-            console.log(formData)
         }
 
         let urlParams = `?amount=5&category=${formData.category}&difficulty=${formData.difficulty}${questionType}&token=${formData.token}`
@@ -44,7 +40,6 @@ export default function Splash({toggleScreen, updateQuestions}) {
         await fetch("https://opentdb.com/api_token.php?command=request")
             .then(response => response.json())
             .then(data => {
-                console.log(data.token)
                 localStorage.setItem("quizzical", data.token)
                 setFormData(prevFormData => {
                     return {
@@ -53,7 +48,6 @@ export default function Splash({toggleScreen, updateQuestions}) {
                     }
                 })
             })
-            console.log(formData)
     }
 
     async function handleSubmit(event) {

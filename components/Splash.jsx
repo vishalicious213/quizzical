@@ -31,12 +31,12 @@ export default function Splash({toggleScreen, updateQuestions}) {
         if (formData.token === "") {
             console.log("no token")
             getToken()
-            console.log(formData)
         } else {
             console.log(localStorage.getItem("quizzical"))
+            console.log(formData)
         }
 
-        let urlParams = `?amount=5&category=${formData.category}&difficulty=${formData.difficulty}${questionType}`
+        let urlParams = `?amount=5&category=${formData.category}&difficulty=${formData.difficulty}${questionType}&token=${formData.token}`
         return urlParams
     }
 
@@ -46,12 +46,12 @@ export default function Splash({toggleScreen, updateQuestions}) {
             .then(data => {
                 console.log(data.token)
                 localStorage.setItem("quizzical", data.token)
-                // setFormData(prevFormData => {
-                //     return {
-                //         ...prevFormData,
-                //         token: data.token
-                //     }
-                // })
+                setFormData(prevFormData => {
+                    return {
+                        ...prevFormData,
+                        token: localStorage.getItem("quizzical")
+                    }
+                })
             })
             console.log(formData)
     }

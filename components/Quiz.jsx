@@ -125,18 +125,18 @@ export default function Quiz({toggleScreen, questions}) {
                                             key={aIndex} 
                                             className={buttonClass(qIndex, decode(answer))}
                                         >
-                                            <input 
-                                                type="radio"
-                                                id={`q${qIndex}a${aIndex}`}
-                                                name={`q${qIndex}`}
-                                                value={decode(answer)}
-                                                checked={formData[`q${qIndex}`] === decode(answer)}
-                                                onChange={(event) => handleChange(event, qIndex)}
-                                            />
                                             <label 
                                                 htmlFor={`q${qIndex}a${aIndex}`}
                                                 className={labelClass(qIndex, decode(answer))}
                                             >
+                                                <input 
+                                                    type="radio"
+                                                    id={`q${qIndex}a${aIndex}`}
+                                                    name={`q${qIndex}`}
+                                                    value={decode(answer)}
+                                                    checked={formData[`q${qIndex}`] === decode(answer)}
+                                                    onChange={(event) => handleChange(event, qIndex)}
+                                                />
                                                 {decode(answer)}
                                             </label>
                                         </div>

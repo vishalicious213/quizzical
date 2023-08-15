@@ -4,10 +4,12 @@ export default function Splash({toggleScreen, updateQuestions}) {
     const [formData, setFormData] = useState({
         category: "9",
         difficulty: "easy",
-        type: "both"
+        type: "both",
+        token: localStorage.getItem("quizzical") || ""
     })
 
     function handleChange(event) {
+        console.log("token", formData.token)
         const {name, value} = event.target
         setFormData(prevFormData => {
             return {
@@ -24,6 +26,12 @@ export default function Splash({toggleScreen, updateQuestions}) {
             questionType = ""
         } else {
             questionType = `&type=${formData.type}`
+        }
+
+        if (formData.token === "") {
+            console.log("no token")
+        } else {
+            console.log(localStorage.getItem("quizzical"))
         }
 
         let urlParams = `?amount=5&category=${formData.category}&difficulty=${formData.difficulty}${questionType}`

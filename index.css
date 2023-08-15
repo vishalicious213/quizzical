@@ -155,6 +155,10 @@ label {
     display: block;
 }
 
+.no-click {
+    pointer-events: none;
+}
+
 /* BUTTONS */
 
 .start-btn, .quiz-btn {

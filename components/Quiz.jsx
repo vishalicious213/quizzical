@@ -116,7 +116,7 @@ export default function Quiz({toggleScreen, questions}) {
             {
                 formData.map((quizItem, qIndex) => {
                     return (
-                        <div key={qIndex} className="question">
+                        <div key={qIndex} className={submitted ? "question no-click" : "question"}>
                             <h2 className="question-title">{decode(quizItem.question)}</h2>
                             {
                                 quizItem.answers.map((answer, aIndex) => {

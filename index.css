@@ -86,13 +86,10 @@ label {
 /* QUIZ */
 
 .quiz {
-    /* max-width: 500px; */
     margin: 2.5rem auto;
-    outline: 1px solid red;
 }
 
 .question {
-    outline: 1px solid orange;
     margin: 0 1rem 1rem;
     padding-bottom: .5rem;
     border-bottom: 1px solid var(--questiondivider);
@@ -111,7 +108,6 @@ label {
 
 .answer {
     background-color: var(--offwhite);
-    /* margin: 0 .75rem .75rem 0; */
     padding: .25rem;
     border: 1px solid var(--blue);
     border-radius: .75rem;

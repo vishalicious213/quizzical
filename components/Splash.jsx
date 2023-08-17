@@ -63,6 +63,8 @@ export default function Splash({toggleScreen, updateQuestions}) {
         // console.log(apiResponse)
         if (apiResponse.response_code === 1) {
             warning()
+        } else if (apiResponse.response_code === 3) {
+            getToken()
         } else {
             updateQuestions(apiResponse.results)
             toggleScreen("quiz")

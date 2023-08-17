@@ -88,9 +88,11 @@ label {
 .quiz {
     max-width: 500px;
     margin: 2.5rem auto;
+    outline: 1px solid red;
 }
 
 .question {
+    outline: 1px solid orange;
     margin: 0 1rem 1rem;
     padding-bottom: .5rem;
     border-bottom: 1px solid var(--questiondivider);
@@ -178,3 +180,27 @@ label {
     background-color: var(--lightblue);
     cursor: pointer;
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 530px) {
+    .answers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .answer label {
+        /* outline: 1px solid red; */
+        /* padding: 0; */
+        /* margin-left: -1rem; */
+        /* margin: 0 .75rem .75rem 0; */
+        /* padding: .25rem 0 .25rem 0; */
+        /* outline: 1px solid orange; */
+    }
+}
+/* 
+@media screen and (min-width: 768px) {
+    .answers {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+} */

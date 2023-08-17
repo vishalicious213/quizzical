@@ -118,6 +118,7 @@ export default function Quiz({toggleScreen, questions}) {
                     return (
                         <div key={qIndex} className={submitted ? "question no-click" : "question"}>
                             <h2 className="question-title">{decode(quizItem.question)}</h2>
+                            <div className="answers">
                             {
                                 quizItem.answers.map((answer, aIndex) => {
                                     return (
@@ -143,6 +144,7 @@ export default function Quiz({toggleScreen, questions}) {
                                     )
                                 })
                             }
+                            </div>
                         </div>
                     )
                 })

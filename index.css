@@ -85,14 +85,22 @@ label {
 
 /* QUIZ */
 
+.confetti {
+    opacity: .5;
+    z-index: 1;
+}
+
 .quiz {
     margin: 2.5rem auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .question {
     margin: 0 1rem 1rem;
     padding-bottom: .5rem;
     border-bottom: 1px solid var(--questiondivider);
+    z-index: 0;
 }
 
 .question-title {

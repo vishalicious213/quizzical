@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
 import { decode } from "html-entities"
+import Confetti from "react-confetti"
 
 export default function Quiz({toggleScreen, questions}) {
     const [formData, setFormData] = useState([])
     const [submitted, setSubmitted] = useState(false)
     const [score, setScore] = useState(0)
+    const [useConfetti, setUseConfetti] = useState(false)
 
     useEffect(() => {
         generateQuestions()
@@ -12,7 +14,8 @@ export default function Quiz({toggleScreen, questions}) {
 
     useEffect(() => {
         if (score === 5) {
-            console.log("Perfect!")
+            setUseConfetti(true)
+            console.log("Confetti")
         }
     }, [score])
 
@@ -119,6 +122,8 @@ export default function Quiz({toggleScreen, questions}) {
 
     return (
         <form className="quiz" onSubmit={handleSubmit}>
+            {useConfetti && <div className="confetti"><Confetti /></div>}
+
             {
                 formData.map((quizItem, qIndex) => {
                     return (

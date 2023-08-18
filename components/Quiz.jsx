@@ -10,6 +10,12 @@ export default function Quiz({toggleScreen, questions}) {
         generateQuestions()
     }, [])
 
+    useEffect(() => {
+        if (score === 5) {
+            console.log("Perfect!")
+        }
+    }, [score])
+
     // add questions and shuffled answers to state
     function generateQuestions() {
         let questionsArray = []
